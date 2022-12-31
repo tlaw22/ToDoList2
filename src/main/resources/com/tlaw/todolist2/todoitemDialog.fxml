@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<DialogPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            fx:controller="com.tlaw.todolist2.HelloDialog" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<headerText>
+    Add a new item to the list.
+</headerText>
+    <content>
+        <GridPane vgap="5" hgap="5">
+            <Label text="Short description:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="shortDescriptionField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Details:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextArea fx:id="detailsArea" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Due date:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <DatePicker GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="datelinePicker"/>
+
+        </GridPane>
+    </content>
+
+
+
+</DialogPane>

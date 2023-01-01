@@ -16,7 +16,7 @@ import java.util.List;
 public class TodoData {
     private static final TodoData instance = new TodoData();
     private static final String filename = "todoListItems.txt";
-    private List<ToDoItems> todoItems;
+    private static List<myDATA> todoItems;
     private final DateTimeFormatter formatter;
 
     public static TodoData getInstance() {
@@ -27,12 +27,16 @@ public class TodoData {
         formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     }
 
-    public List<ToDoItems> getTodoItems() {
+    public List<myDATA> getTodoItems() {
         return todoItems;
     }
 
-    public void setTodoItems(List<ToDoItems> todoItems) {
+    public void setTodoItems(List<myDATA> todoItems) {
         this.todoItems = todoItems;
+    }
+    public static void addTodoItem(myDATA item) {
+        todoItems.add(item);
+
     }
 
     public void loadTodoItems() throws IOException {
@@ -49,7 +53,7 @@ public class TodoData {
                 String details = itemPieces[1];
                 String dateString = itemPieces[2];
                 LocalDate date = LocalDate.parse(dateString, formatter);
-                ToDoItems todoItem = new ToDoItems(shortDescription, details, date);
+                myDATA todoItem = new myDATA(shortDescription, details, date);
                 todoItems.add(todoItem);
             }
 
@@ -66,9 +70,9 @@ public class TodoData {
         Path path = Paths.get(filename);
         BufferedWriter bw = Files.newBufferedWriter(path);
         try {
-            Iterator<ToDoItems> iter = todoItems.iterator();
+            Iterator<myDATA> iter = todoItems.iterator();
             while(iter.hasNext()) {
-                ToDoItems todoItem = iter.next();
+                myDATA todoItem = iter.next();
                 bw.write(String.format("%s\t%s\t%s",
                         todoItem.getShortDescription(),
                         todoItem.getDetails(),
@@ -81,6 +85,8 @@ public class TodoData {
             }
         }
     }
+
+
 
 }
 

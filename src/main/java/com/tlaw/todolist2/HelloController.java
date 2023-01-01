@@ -64,6 +64,8 @@ public class HelloController {
     @FXML
     public void showNewItemDialog() {
         Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Post a new entry form");
+        dialog.setHeaderText("Use this dialgo to post a new entry");
         dialog.initOwner(mainBorderPane.getScene().getWindow());
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("todoitemDialog.fxml"));
@@ -81,7 +83,11 @@ public class HelloController {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             System.out.println("Ok button pressed");
             HelloDialog controller = fxmlLoader.getController();
-            controller.precessResults();
+            myDATA newItem = controller.precessResults();
+            todoListView.getSelectionModel().select(newItem);
+            todoListView.getItems().setAll(TodoData.getInstance().getTodoItems());
+            System.out.println("ListView updated...");
+            deadLineLabel.setText("ListView Updated...");
         } else
             System.out.println("Canceled");
 

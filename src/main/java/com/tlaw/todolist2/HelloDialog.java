@@ -16,11 +16,13 @@ public class HelloDialog {
     private TextArea detailsArea;
 @FXML
     private DatePicker datelinePicker;
-public void precessResults(){
+public myDATA precessResults(){
     String shortDescription = shortDescriptionField.getText().trim();
     String details = detailsArea.getText().trim();
     LocalDate deadlineValue = datelinePicker.getValue();
-    TodoData.addTodoItem(new myDATA(shortDescription, details, deadlineValue));
+    myDATA newItem = new myDATA(shortDescription, details, deadlineValue);
+    TodoData.addTodoItem(newItem);
+    return newItem;
 
 
 }

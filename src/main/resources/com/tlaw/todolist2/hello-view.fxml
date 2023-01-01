@@ -42,7 +42,7 @@
    <Label fx:id="deadLineLabel"  style="-fx-background-color: white; -fx-font-weight: bold; -fx-font-name: Ariel">
 
    </Label>
-   <TextField HBox.hgrow="ALWAYS"/>
+
 </HBox>
 
       </VBox>

@@ -1,6 +1,6 @@
 package com.tlaw.todolist2;
 
-import com.tlaw.todolist2.datamodel.ToDoItems;
+import com.tlaw.todolist2.datamodel.myDATA;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -19,7 +19,7 @@ public void precessResults(){
     String shortDescription = shortDescriptionField.getText().trim();
     String details = detailsArea.getText().trim();
     LocalDate deadlineValue = datelinePicker.getValue();
-    ToDoItems.addTodoItem(new ToDoItems(shortDescription, details, deadlineValue));
+    myDATA.addTodoItem(new myDATA(shortDescription, details, deadlineValue));
 
 
 }

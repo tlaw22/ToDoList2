@@ -2,19 +2,19 @@ package com.tlaw.todolist2.datamodel;
 
 import java.time.LocalDate;
 
-public class ToDoItems {
+public class myDATA {
     private String shortDescription;
     private String details;
     private LocalDate date;
 
-    public ToDoItems(String shortDescription, String details, LocalDate date) {
+    public myDATA(String shortDescription, String details, LocalDate date) {
         this.shortDescription = shortDescription;
         this.details = details;
         this.date = date;
     }
 
-    public static void addTodoItem(ToDoItems item) {
-        ToDoItems.addTodoItem(item);
+    public static void addTodoItem(myDATA item) {
+        myDATA.addTodoItem(item);
 
     }
 
